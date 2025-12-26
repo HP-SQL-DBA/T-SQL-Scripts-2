@@ -1,6 +1,5 @@
 
 
-select * from open
 
 EXEC sp_configure 'show advanced options', 1
 RECONFIGURE
@@ -12,25 +11,25 @@ select * from sys.tables
 select distinct servername ,cast(StartTime as date) from DDLChanges
 
 insert into DDLChanges
-SELECT 'deo-sql12c',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=deo-sql12c;Integrated Security=SSPI').tempdb.dbo.changelog
+SELECT 'sql12c',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=sql12c;Integrated Security=SSPI').tempdb.dbo.changelog
 insert into DDLChanges
-SELECT 'deo-sql1701',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=deo-sql1701;Integrated Security=SSPI').tempdb.dbo.changelog
+SELECT 'sql1701',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=sql1701;Integrated Security=SSPI').tempdb.dbo.changelog
 insert into DDLChanges
-SELECT 'deo-sql1702',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=deo-sql1702;Integrated Security=SSPI').tempdb.dbo.changelog
+SELECT 'sql1702',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=sql1702;Integrated Security=SSPI').tempdb.dbo.changelog
 insert into DDLChanges
-SELECT 'deo-sql1703',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=deo-sql1703;Integrated Security=SSPI').tempdb.dbo.changelog
+SELECT 'sql1703',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=sql1703;Integrated Security=SSPI').tempdb.dbo.changelog
 insert into DDLChanges
-SELECT 'deo-sql1704',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=deo-sql1704;Integrated Security=SSPI').tempdb.dbo.changelog
+SELECT 'sql1704',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=sql1704;Integrated Security=SSPI').tempdb.dbo.changelog
 
 insert into DDLChanges
-SELECT 'DEO-STAGESQLC2\MSSQLSTAGEC2',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=DEO-STAGESQLC2\MSSQLSTAGEC2;Integrated Security=SSPI').tempdb.dbo.changelog
+SELECT 'STAGESQLC2\MSSQLSTAGEC2',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=STAGESQLC2\MSSQLSTAGEC2;Integrated Security=SSPI').tempdb.dbo.changelog
 
 
 insert into DDLChanges
-SELECT 'DEO-SQL12C2\MSSSQLCLUSTER2',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=DEO-SQL12C2\MSSSQLCLUSTER2;Integrated Security=SSPI').tempdb.dbo.changelog
+SELECT 'SQL12C2\MSSSQLCLUSTER2',*  FROM OPENDATASOURCE('SQLNCLI', 'Data Source=SQL12C2\MSSSQLCLUSTER2;Integrated Security=SSPI').tempdb.dbo.changelog
 
 
-SELECT a.*  FROM OPENROWSET('SQLNCLI', 'Server=DEO-SQL12C2\MSSSQLCLUSTER2;Trusted_Connection=yes;',         'SELECT * FROM tempdb.dbo.changelog') AS a;
+SELECT a.*  FROM OPENROWSET('SQLNCLI', 'Server=SQL12C2\MSSSQLCLUSTER2;Trusted_Connection=yes;',         'SELECT * FROM tempdb.dbo.changelog') AS a;
 
 
 

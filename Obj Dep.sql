@@ -1,7 +1,3 @@
-select * from sys.procedures
-select * from sys.tables order by name
-
-
 
  SELECT  DB_NAME() AS dbname,  o.type_desc AS referenced_object_type,  d1.referenced_entity_name,  d1.referenced_id, 
         STUFF( (SELECT ', ' + OBJECT_NAME(d2.referencing_id),d2.*
